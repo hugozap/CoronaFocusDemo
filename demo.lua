@@ -22,11 +22,9 @@ function scene:createScene()
 	lens.y = display.contentCenterY
 
 	mask = graphics.newMask( "mask.png" )
-	--normal.alpha = 0
 	normal:setMask(mask)
-	print("maskX:" .. normal.maskX)
-	--lens.alpha = 0
 	
+
 	blurred:addEventListener( "touch", function(ev)
 
 		if ev.phase == "began" then
@@ -55,13 +53,7 @@ function scene:createScene()
 			elseif ev.phase == "ended" then
 				normal.hasFocus = false
 				display.getCurrentStage():setFocus(nil)
-
-				--normal.alpha = 0
-				--lens.alpha = 0
 			end
-
-			
-
 		end
 
 	end )
